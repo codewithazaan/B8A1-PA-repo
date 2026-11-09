@@ -1,6 +1,5 @@
 const multiplyValue = (value : number, multiplier? : number) : number => {
 
- 
     if(value === 0 || multiplier === 0){
         return 0;
     }else if(multiplier === undefined){
@@ -14,9 +13,12 @@ const multiplyValue = (value : number, multiplier? : number) : number => {
 
 
 
+
+
+
 type Value = string | number | boolean;
 
-const processInput = (value : Value) : Value => {
+const processInput = (value : Value) : string | number => {
     if(typeof value === "string"){
         return JSON.stringify(value.trim().toLowerCase());
     }else if(typeof value === "number"){
@@ -35,6 +37,8 @@ const processInput = (value : Value) : Value => {
 
 
 
+
+
 type LocationType = readonly [number, number, string]
 
 const formatCoordinate = (location : LocationType) : string =>{
@@ -47,9 +51,16 @@ const formatCoordinate = (location : LocationType) : string =>{
 
 
 
+
+
+
+
 const concatenateArrays = <T>(...arrays: T[][])  : T[] =>{
     return ([] as T[]).concat(...arrays); 
 }
+
+
+
 
 
 
@@ -59,7 +70,6 @@ interface Course {
     students : number;
     isPublished : boolean;
 }
-
 
 const getPopularCourses = (courses : Course[], minStudents : number) : Course[] => {
 
@@ -78,9 +88,16 @@ const getPopularCourses = (courses : Course[], minStudents : number) : Course[] 
 
 
 
+
+
 const pluckValues = <T , K extends keyof T>(items: T[], key: K ) : T[K][] =>{
           return items.map(item => item[key]);
 }
+
+
+
+
+
 
 
 
@@ -115,6 +132,12 @@ class Manager extends Employee{
         return JSON.stringify(`Manager of ${this.department}: ${this.name}`)
     }
 }
+
+
+
+
+
+
 
 
 export{}
