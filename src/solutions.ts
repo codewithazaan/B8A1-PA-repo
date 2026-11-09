@@ -18,7 +18,7 @@ const processInput = (value : Value) : Value => {
     if(typeof value === "string"){
         return JSON.stringify(value.trim().toLowerCase());
     }else if(typeof value === "number"){
-        return value*10;
+        return Math.abs(value*10);
     }else if(typeof value === "boolean"){
         if(value){
             return JSON.stringify("Active")
@@ -30,6 +30,8 @@ const processInput = (value : Value) : Value => {
         return otherValue;
     }
 }
+
+
 
 
 

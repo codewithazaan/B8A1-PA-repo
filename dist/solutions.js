@@ -15,7 +15,7 @@ const processInput = (value) => {
         return JSON.stringify(value.trim().toLowerCase());
     }
     else if (typeof value === "number") {
-        return value * 10;
+        return Math.abs(value * 10);
     }
     else if (typeof value === "boolean") {
         if (value) {
@@ -30,7 +30,6 @@ const processInput = (value) => {
         return otherValue;
     }
 };
-console.log(processInput("  TypeScript  "));
-console.log(processInput(7));
-console.log(processInput(true));
-console.log(processInput(false));
+console.log(processInput(-0));
+console.log(processInput(-44));
+console.log(processInput(0));
