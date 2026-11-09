@@ -12,6 +12,8 @@ const multiplyValue = (value : number, multiplier? : number) : number => {
 } 
 
 
+
+
 type Value = string | number | boolean;
 
 const processInput = (value : Value) : Value => {
@@ -31,11 +33,9 @@ const processInput = (value : Value) : Value => {
     }
 }
 
-//!Problem - 3
+
 
 type LocationType = readonly [number, number, string]
-
-
 
 const formatCoordinate = (location : LocationType) : string =>{
 
@@ -44,4 +44,10 @@ const formatCoordinate = (location : LocationType) : string =>{
     return JSON.stringify(`Location: ${locationName} (${latitude}, ${longitude})`);
 }
 
+
+
+
+const concatenateArrays = <T>(...arrays: T[][])  : T[] =>{
+    return ([] as T[]).concat(...arrays); 
+}
 
