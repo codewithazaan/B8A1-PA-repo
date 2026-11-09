@@ -1,4 +1,3 @@
-"use strict";
 const multiplyValue = (value, multiplier) => {
     if (value === 0 || multiplier === 0) {
         return 0;
@@ -70,10 +69,17 @@ class Manager extends Employee {
         return JSON.stringify(`Manager of ${this.department}: ${this.name}`);
     }
 }
-// Sample Input:
-const manager = new Manager("Alice", 50000, "Engineering");
-console.log(manager.getDetails);
-console.log(manager.getRoleInfo());
-// Sample Output:
-// "Employee: Alice, Base Salary: 50000"
-// "Manager of Engineering: Alice"
+const validateAgeAsync = async (age) => {
+    return new Promise((resolve, reject) => {
+        if (age >= 18) {
+            setTimeout(() => {
+                resolve(JSON.stringify("Access Granted"));
+            }, 1000);
+        }
+        else {
+            reject(new Error("Access Denied: Must be 18 or older"));
+        }
+    });
+};
+await validateAgeAsync(1).then(console.log).catch(error => console.log(error.message));
+export {};

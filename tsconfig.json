@@ -8,5 +8,6 @@
     // Recommended Options
     "strict": true,
     "skipLibCheck": true,
+    
   }
 }
