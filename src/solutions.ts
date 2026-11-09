@@ -31,7 +31,17 @@ const processInput = (value : Value) : Value => {
     }
 }
 
+//!Problem - 3
+
+type LocationType = readonly [number, number, string]
 
 
+
+const formatCoordinate = (location : LocationType) : string =>{
+
+    const [latitude, longitude, locationName] = location;
+
+    return JSON.stringify(`Location: ${locationName} (${latitude}, ${longitude})`);
+}
 
 

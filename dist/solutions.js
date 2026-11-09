@@ -30,6 +30,12 @@ const processInput = (value) => {
         return otherValue;
     }
 };
-console.log(processInput(-0));
-console.log(processInput(-44));
-console.log(processInput(0));
+const formatCoordinate = (location) => {
+    const [latitude, longitude, locationName] = location;
+    return JSON.stringify(`Location: ${locationName} (${latitude}, ${longitude})`);
+};
+console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+console.log(formatCoordinate([22.35, 91.78, "Chittagong"]));
+// Sample Output:
+// "Location: Dhaka (23.81, 90.41)"
+// "Location: Chittagong (22.35, 91.78)"
