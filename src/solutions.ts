@@ -84,3 +84,37 @@ const pluckValues = <T , K extends keyof T>(items: T[], key: K ) : T[K][] =>{
 
 
 
+class Employee{
+
+    protected name: string;
+    private _baseSalary: number;
+
+    constructor(name: string, baseSalary: number){
+
+        this.name = name;
+        this._baseSalary = baseSalary;
+
+    }
+
+     get getDetails(){
+        return JSON.stringify(`Employee: ${this.name}, Base Salary: ${this._baseSalary}`)
+     }
+
+}
+
+class Manager extends Employee{
+    private department: string;
+
+    constructor(name: string, baseSalary: number, department: string){
+        super(name, baseSalary)
+        this.department = department;
+    }
+
+    getRoleInfo(){
+        
+        return JSON.stringify(`Manager of ${this.department}: ${this.name}`)
+    }
+}
+
+
+

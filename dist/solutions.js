@@ -49,12 +49,31 @@ const getPopularCourses = (courses, minStudents) => {
 const pluckValues = (items, key) => {
     return items.map(item => item[key]);
 };
-const users = [
-    { id: 1, name: "Rakib", role: "Admin" },
-    { id: 2, name: "Sadia", role: "Editor" },
-    { id: 3, name: "Tariq", role: "Subscriber" },
-    { product: "Rappo Mouse", price: 1100 }
-];
-console.log(pluckValues(users, "name"));
-console.log(pluckValues(users, "id"));
-console.log(pluckValues(users, "product"));
+class Employee {
+    name;
+    _baseSalary;
+    constructor(name, baseSalary) {
+        this.name = name;
+        this._baseSalary = baseSalary;
+    }
+    get getDetails() {
+        return JSON.stringify(`Employee: ${this.name}, Base Salary: ${this._baseSalary}`);
+    }
+}
+class Manager extends Employee {
+    department;
+    constructor(name, baseSalary, department) {
+        super(name, baseSalary);
+        this.department = department;
+    }
+    getRoleInfo() {
+        return JSON.stringify(`Manager of ${this.department}: ${this.name}`);
+    }
+}
+// Sample Input:
+const manager = new Manager("Alice", 50000, "Engineering");
+console.log(manager.getDetails);
+console.log(manager.getRoleInfo());
+// Sample Output:
+// "Employee: Alice, Base Salary: 50000"
+// "Manager of Engineering: Alice"
